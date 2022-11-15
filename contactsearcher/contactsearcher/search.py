@@ -21,7 +21,7 @@ def search_for_email_given_job(job_description: str, contacts: str) -> List[List
     with open(contacts, "r") as csv_file:
         contacts_data = csv.reader(csv_file)
         for contact_line in contacts_data:
-            current_job = contact_line[1]
-            if job_description in current_job.lower():
+            current_contact_job = contact_line[1]
+            if job_description in current_contact_job.lower():
                 contacts_list.append(contact_line)
         return contacts_list
